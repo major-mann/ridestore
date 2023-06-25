@@ -1,4 +1,4 @@
-const apiUrl = `${Cypress.env("apiUrl")}`
+const apiUrl = `${Cypress.env('apiUrl')}`;
 
 describe('Backend Test Spec', () => {
 
@@ -8,7 +8,7 @@ describe('Backend Test Spec', () => {
       method: 'GET',
       url: `${apiUrl}/ping`,
     }).then((response) => {
-      expect(response.status).to.eq(200)
-    })
-  })
-})
+      expect(response.status).to.eq(200);
+    });
+  });
+});

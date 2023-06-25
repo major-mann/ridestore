@@ -1,19 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const api_endpoints = require('../api');
-const app = express();
 
-app.use(bodyParser.json());
+module.exports = (function initializeExpressServer() {
+  const app = express();
 
-app.use('/', does_method_exist, api_endpoints);
+  app.use(bodyParser.json());
+  app.use('/', does_method_exist, api_endpoints);
+  app.get('*', (req, res) => {
+    res.status(404).send('404 Not Found');
+  });
 
-app.get('*', (req, res) => {
-  res.status(404).send('404 Not Found');
-});
+  return app;
 
-function does_method_exist(req, res, next) {
-  next();
-}
-
-
-module.exports = app;
+  function does_method_exist(req, res, next) {
+    // TODO: What should this implementation look like?
+    next();
+  }
+}());
