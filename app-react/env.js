@@ -1,0 +1,3 @@
+module.exports = {
+    API_TRANSACTION_MANAGEMENT: process.env.API_TRANSACTION_MANAGEMENT,
+};

@@ -8,7 +8,8 @@
     "start:backend": "cd app-express && npm run start",
     "start:frontend": "cd app-react &&  npm run start",
     "start": "npm run start:backend & npm run start:frontend",
-    "test": "cypress run"
+    "test": "cypress run",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "cypress": "^9.7.0",
