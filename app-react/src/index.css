@@ -8,3 +8,44 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex.row {
+  flex-direction: row;
+}
+
+.flex.col {
+  flex-direction: column;
+}
+
+.fill.width {
+  width: 100%;
+}
+
+.fill.height {
+  width: 100%;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.padded {
+  padding: 1em;
+}
+
+.margined {
+  margin: 1em;
+}
+
+.outlined {
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+}

@@ -7,14 +7,15 @@ const log = {
     warn: (...args) => logger(`warn`, ...args),
     error: (...args) => logger(`error`, ...args),
 };
-module.exports = log;
+
+export default log;
 
 function logger(type, ...args) {
     const index = LEVELS.indexOf(type);
     if (index === -1) {
         throw new Error(`Invalid log type "${type}" received`);
     }
-    if (log.LEVEL < index) {
+    if (index < log.LEVEL) {
         return;
     }
     console[type](...args);

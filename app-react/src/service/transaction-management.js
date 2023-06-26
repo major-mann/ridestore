@@ -1,8 +1,8 @@
-const { API_TRANSACTION_MANAGEMENT } = require(`../../env.js`);
-const log = require(`../log.js`);
-const assert = require(`../assert.js`);
+import { API_TRANSACTION_MANAGEMENT } from '../env.js';
+import log from '../log.js';
+import assert from '../assert.js';
 
-module.exports = {
+export {
     ping,
 
     transactionCreate,
@@ -24,10 +24,13 @@ async function transactionCreate({ accountId, amount }) {
     assert(accountId, `transactionCreate missing accountId`);
     assert(Number.isInteger(amount), `transactionCreate amount is not a valid integer`);
 
-    const { data: transaction } = await api(`/transaction`, {
+    const { data: transaction } = await api(`/transactions`, {
         method: `POST`,
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
-            accountId,
+            account_id: accountId,
             amount,
         })
     });

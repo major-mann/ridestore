@@ -1,18 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import log from './log.js';
 
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.min.css';
 import './index.css';
 
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { App } from './App.js';
+import reportWebVitals from './reportWebVitals.js';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById("root"));
+
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
-reportWebVitals(console.debug);
+reportWebVitals(log.debug);
