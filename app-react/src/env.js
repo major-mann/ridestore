@@ -1,0 +1,5 @@
+import assert from './assert';
+
+export const API_TRANSACTION_MANAGEMENT = process.env.REACT_APP_API_TRANSACTION_MANAGEMENT;
+
+assert(API_TRANSACTION_MANAGEMENT, `Missing REACT_APP_API_TRANSACTION_MANAGEMENT env var`);

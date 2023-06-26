@@ -8,9 +8,13 @@
     "start:backend": "cd app-express && npm run start",
     "start:frontend": "cd app-react &&  npm run start",
     "start": "npm run start:backend & npm run start:frontend",
-    "test": "cypress run"
+    "test": "cypress run",
+    "lint": "eslint ."
   },
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "eslint": "^8.43.0",
+    "eslint-plugin-cypress": "^2.13.3",
+    "eslint-plugin-react": "^7.32.2"
   }
 }

@@ -1,18 +1,14 @@
+const http = require('http');
+const app = require('./app');
 
-const http = require("http");
+(function startApp() {
+  const server = http.createServer(app);
+  const PORT = process.env.PORT || 3001;
 
-const app = require("./app");
-
-const server = http.createServer(app);
-
-const PORT = process.env.PORT || 5000;
-
-server.listen(PORT, error => {
-
+  server.listen(PORT, error => {
     if (error) {
-        return console.log(error);
+      return console.log(error);
     }
-
-    console.log("🚀 Server started on port " + PORT);
-
-});
+    console.log('🚀 Server started on port ' + PORT);
+  });
+}());
