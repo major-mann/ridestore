@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.1.1",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.1.1",
     "formik": "^2.4.2",
     "primereact": "^9.5.0",
@@ -17,7 +17,8 @@
   "scripts": {
     "build": "react-scripts build",
     "start": "react-scripts start",
-    "test": "cypress run"
+    "test": "cypress run",
+    "test:jest": "jest"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +39,12 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js"
     ]
   }
 }
